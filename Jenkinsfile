@@ -31,7 +31,7 @@ pipeline {
                       ${scannerHome}/bin/sonar-scanner  \
                       -Dsonar.projectKey=addressbook-application \
                       -Dsonar.projectName='addressbook-application' \
-                      -Dsonar.host.url=http://172.31.30.74:9000 \
+                      -Dsonar.host.url=http://35.88.151.93:9000 \
                       -Dsonar.token=${SONAR_TOKEN} \
                       -Dsonar.sources=src/main/java/ \
                       -Dsonar.java.binaries=target/classes \
@@ -72,13 +72,13 @@ pipeline {
 
     stage('7. Email Notification') {
       steps {
-        mail bcc: 'fusisoft@gmail.com', body: '''Build is Over. Check the application using the URL below:
+        mail bcc: 'dirain29@gmail.com', body: '''Build is Over. Check the application using the URL below:
          https://app.dominionsystem.org/addressbook-1.0
          Let me know if the changes look okay.
          Thanks,
          Dominion System Technologies,
          +1 (313) 413-1477''', 
-         subject: 'Application was Successfully Deployed!!', to: 'fusisoft@gmail.com'
+         subject: 'Application was Successfully Deployed!!', to: 'diraine29@gmail.com'
       }
     }
   }
