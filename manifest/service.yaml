@@ -10,6 +10,21 @@ spec:
     - protocol: TCP
       port: 8080
       targetPort: 8080
+  type: LoadBalancer  # This creates an external load balancer to expose the service
+
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: addressbook-service
+#   namespace: directory
+# spec:
+#   selector:
+#     app: addressbook
+#   ports:
+#     - protocol: TCP
+#       port: 8080
+#       targetPort: 8080
 
 #apiVersion: networking.k8s.io/v1
 # kind: Ingress
